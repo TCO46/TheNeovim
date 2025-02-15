@@ -8,6 +8,13 @@
 - [Introduction](#introduction)
     + [What is Neovim?](#what-is-neovim)
     + [Why Neovim?](#why-neovim")
+- [Installing Neovim](#installing-neovim)
+    + [Linux](#linux)
+    + [Windows](#windows)
+    + [MacOS](#macos)
+- [Navigation](#navigation)
+ + [Basic Vim Motion]
+ + [Saving and Quiting]
 
 ## Introduction
 
@@ -15,7 +22,7 @@ If you're reading this, you might be familiar with code editor like Visual Studi
 
 ### So What Is Neovim?
 
-Neovim is a highly extensible keyboard-based editor on terminal where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
+Neovim is a highly extensible keyboard-based editor on terminal-based where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
 
 ### Why use Neovim?
 
@@ -30,5 +37,70 @@ That's because you haven't set everything up so it's can usable. Neovim becomes 
 So here are **3 reasons** why I pick Neovim for my daily coding editor:
 
 1. It's insanely fast in navigation and minimalist workflow.
-2. The Neovim customization is beyond your own limits (or someone else config).
+2. The Neovim customization is beyond your own limits (or someone else plugins/config).
 3. Neovim is light-weight which can be run in everywhere (especially server).
+
+## Installing Neovim
+
+So you're here because you don't know how to install it or you did it but it's somehow broken or not working properly.
+
+### Linux
+
+Neovim exist in almost Linux distributions repositories due to its popularity so most likely you can install it using your distrubution's package manager.
+
+1. Arch (btw)
+
+```
+$ sudo pacman -S neovim
+```
+
+2. Ubuntu/Debian
+
+```
+$ sudo apt install neovim
+```
+
+3. Fedora
+
+```
+$ sudo dnf install -y neovim python3-neovim
+```
+
+### Windows
+
+If you using windows especially windows 11 then `winget` (A package manager for windows) already installed in your computer. Simply use this command to install.
+
+```
+winget install Neovim.Neovim
+```
+
+There's also alternative package manager for windows like Scoop or Chocolatey and if you using any of it, use these command
+
+1. Scoop
+```
+scoop bucket add main
+scoop install neovim
+```
+
+2. Chocolatey
+
+```
+choco install neovim
+```
+
+### MacOS
+
+If you using homebrew (which you should be), you can install Neovim with the following command:
+
+```
+brew install neovim
+```
+
+When you first open up Neovim and what first pop up is: 
+
+(image later)
+
+You may think: __"How can this post claim Neovim outperforms my current editor, I literally can't even type!, how can I move around?, I can't do anything! **HOW DO I EXIT THIS?!?!?**"__.
+
+That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing and using it and of course you have to install plugins in it.
+
