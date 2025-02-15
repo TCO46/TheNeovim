@@ -6,15 +6,15 @@
 
 ## Table of content
 - [Introduction](#introduction)
-    + [What is Neovim?](#what-is-neovim)
-    + [Why Neovim?](#why-neovim")
+    + [So what is Neovim?](#what-is-neovim?)
+    + [Why use Neovim?](#why-use-neovim?)
 - [Installing Neovim](#installing-neovim)
     + [Linux](#linux)
     + [Windows](#windows)
     + [MacOS](#macos)
 - [Navigation](#navigation)
- + [Basic Motion]
- + [Saving and Quiting]
+    + [Basic Motion](#basic-motion)
+    + [Saving and Quitting](#saving-and-quitting)
 
 ## Introduction
 
@@ -80,6 +80,7 @@ scoop install neovim
 choco install neovim
 ```
 
+If you use nether of those then you can visit [Neovim official repo](https://github.com/neovim/neovim/releases/tag/v0.10.4) and look for `nvim-win64.msi`
 ### MacOS
 
 If you using homebrew (which you should be), you can install Neovim with the following command:
@@ -100,3 +101,10 @@ That's because you haven't set everything up so it's can usable. Neovim becomes 
 
 ### Basic Motion
 
+First to open a file with Neovim use the command `nvim <file name>`
+
+There are 4 main modes in Neovim: 
+- NORMAL Mode: In this mode, you can navigating using your keyboard. This mode is default when you first start Neovim or press `<ESC>` to enter back when in other mode.
+- INSERT Mode: When you in this mode, you can freely type text just like other text editor. Use `i` to enter this mode.
+- VISUAL Mode: If you want to select a certain text or line. Use `v` or `V` (`v` will mark as you move the cursor, `V` will select a whole line.)
+- Command-line Mode: To enter this mode press `:`. In this mode you can enter various commands (e.g. `:wq`)
