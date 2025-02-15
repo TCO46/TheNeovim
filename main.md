@@ -13,7 +13,7 @@
     + [Windows](#windows)
     + [MacOS](#macos)
 - [Navigation](#navigation)
- + [Basic Vim Motion]
+ + [Basic Motion]
  + [Saving and Quiting]
 
 ## Introduction
@@ -96,11 +96,15 @@ If you using homebrew (which you should be), you can install Neovim with the fol
 brew install neovim
 ```
 
-When you first open up Neovim and what first pop up is: 
+## Navigation
+
+When you first open up Neovim and what first pop up is: 
 
 (image later)
 
 You may think: __"How can this post claim Neovim outperforms my current editor, I literally can't even type!, how can I move around?, I can't do anything! **HOW DO I EXIT THIS?!?!?**"__.
 
 That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing and using it and of course you have to install plugins in it.
+
+### Basic Motion
 
