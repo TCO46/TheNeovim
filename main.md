@@ -26,15 +26,7 @@ Neovim is a highly extensible keyboard-based editor on terminal-based where your
 
 ### Why use Neovim?
 
-When you first open up Neovim and what first pop up is: 
-
-(image later)
-
-You may think: __"How can this post claim Neovim outperforms my current editor, I literally can't even type!, how can I move around?, I can't do anything! **HOW DO I EXIT THIS?!?!?**"__.
-
-That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing and using it and of course you have to install plugins in it.
-
-So here are **3 reasons** why I pick Neovim for my daily coding editor:
+Here are **3 reasons** why I pick Neovim for my daily coding editor:
 
 1. It's insanely fast in navigation and minimalist workflow.
 2. The Neovim customization is beyond your own limits (or someone else plugins/config).
