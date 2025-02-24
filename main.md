@@ -15,6 +15,8 @@
 - [Navigation](#navigation)
     + [Basic Motion](#basic-motion)
     + [Saving and Quitting](#saving-and-quitting)
+- [Plugins](#plugins)
+    + [Setup lazy.nvim](#setup-lazyvim)
 
 ## Introduction
 
@@ -80,7 +82,7 @@ scoop install neovim
 choco install neovim
 ```
 
-If you use nether of those then you can visit [Neovim official repo](https://github.com/neovim/neovim/releases/tag/v0.10.4) and look for `nvim-win64.msi`
+If you use neither of those then you can visit [Neovim official repo](https://github.com/neovim/neovim/releases/tag/v0.10.4) and look for `nvim-win64.msi`
 ### MacOS
 
 If you using homebrew (which you should be), you can install Neovim with the following command:
@@ -97,14 +99,121 @@ When you first open up Neovim and what first pop up is:
 
 You may think: __"How can this post claim Neovim outperforms my current editor, I literally can't even type!, how can I move around?, I can't do anything! **HOW DO I EXIT THIS?!?!?**"__.
 
-That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing and using it and of course you have to install plugins in it.
-
+That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing or install plugins to it.
 ### Basic Motion
 
 First to open a file with Neovim use the command `nvim <file name>`
 
 There are 4 main modes in Neovim: 
-- NORMAL Mode: In this mode, you can navigating using your keyboard. This mode is default when you first start Neovim or press `<ESC>` to enter back when in other mode.
-- INSERT Mode: When you in this mode, you can freely type text just like other text editor. Use `i` to enter this mode.
-- VISUAL Mode: If you want to select a certain text or line. Use `v` or `V` (`v` will mark as you move the cursor, `V` will select a whole line.)
-- Command-line Mode: To enter this mode press `:`. In this mode you can enter various commands (e.g. `:wq`)
+- **NORMAL** Mode: In this mode, you can navigating using your keyboard. This mode is default when you first start Neovim or press `<ESC>` to enter back when in other mode.
+- **INSERT** Mode: When you in this mode, you can freely type text just like other text editor. Use `i` to enter this mode.
+- **VISUAL** Mode: If you want to select a certain text or line. Use `v` or `V` (`v` will mark as you move the cursor, `V` will select a whole line).
+- **Command-line** Mode: To enter this mode press `:`. In this mode you can enter various commands.
+
+Now we'll move on to Navigation or how to move around in **NORMAL** mode.
+
+**Basic movements:** 
+
+- Use `h` move cursor right.
+- Use `j` move cursor down.
+- Use `k` move cursor up.
+- Use `l` move cursor left.
+
+**Vertical movement:**
+
+- Use `Ctrl + u` move cursor up 1/2 page.
+- Use `Ctrl + d` move cursor down 1/2 page.
+- Press `G` move cursor to bottom.
+- Press `gg` move cursor to top.
+- Use `{` to move up a paragraph and `}` to move down instead.
+- To search use press `/` and type in what to search then press Enter. You can also press `n` to jump to the next one and `N` to go back.
+- You can also use `?` to search backward mean your `n` will go back and vice versa.
+- To search a word you currently on press `*` and `#` to search backward. Movement also the same for searching.
+
+**Horizontal movements:**
+
+- Use `w` to jump forward to start of a word.
+- Use `e` to jump forward to end of a word.
+- use `b` to jump backward to start of a word.
+- Use `fo` to jump to next occurrence of character `o`.
+- Use `Fo` to jump to previous occurrence of character `o`
+- Use `,` to repeat previous `f` and `;` to repeat the same but backward.
+- Press `$` will jump the end of a line and `_` will jump to begin of a line.
+
+So after all that movement and how you navigating in Neovim, there must be some keybinds to delete or copy/paste right? Yes, they are exist and here are some example: 
+
+- `d` to delete marked text or use `dd` to delete a whole line you are in.
+- `y` mean yank or copy a marked text and `yy` also yank a whole line.
+- `p` to paste after the cursor.
+
+### Saving and quitting
+
+To quit a file simply enter command mode then type `wq`
+
+- `w` stands for saving a file.
+- `q` stands for quitting a file.
+
+So if you want to save or quit then use only one of them in command mode.
+
+##### And this is almost every basic Neovim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
+
+## Plugins
+
+Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull.
+
+### Setup lazy.nvim
+
+Lazy.nvim is a modern neovim plugin manager. It's provide you with powerful UI to manage plugins and fast startup time when you installed a lots of plugin. Of course there are many more plugin manager like Packer, vim-plug but I'm too lazy to manually set those up and if you like me then this plugin manager is for you also.
+
+#### Requirements
+
+- Neovim >= 0.8.0 (needs to be built with LuaJIT)
+- Git >= 2.19.0 (for partial clones support) 
+- a [Nerd Font](https://www.nerdfonts.com/) (optional)
+
+#### Installation
+
+First you need to locate where your Neovim configuration is locate
+
+- For Linux simply go to `~/.config/nvim`.
+- For Windows go to `Appdata/Local/nvim`. Or go into nvim then use `:echo stdpath('config')` to locate nvim folder.
+- For MacOS, it's basically the same for Linux `~/config/nvim`.
+
+You can setup a structured system but I'm lazy to do that so here we will do it in a single file.
+
+```lua
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- add your plugins here
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
+```
