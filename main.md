@@ -102,49 +102,86 @@ You may think: __"How can this post claim Neovim outperforms my current editor, 
 That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing or install plugins to it.
 ### Basic Motion
 
-First to open a file with Neovim use the command `nvim <file name>`
+First to open a file with Neovim use the following command: 
+
+```
+nvim <file_name>
+```
+
+If the file doesn't exist then Neovim will create a new one upon saving.
 
 There are 4 main modes in Neovim: 
-- **NORMAL** Mode: In this mode, you can navigating using your keyboard. This mode is default when you first start Neovim or press `<ESC>` to enter back when in other mode.
-- **INSERT** Mode: When you in this mode, you can freely type text just like other text editor. Use `i` to enter this mode.
-- **VISUAL** Mode: If you want to select a certain text or line. Use `v` or `V` (`v` will mark as you move the cursor, `V` will select a whole line).
-- **Command-line** Mode: To enter this mode press `:`. In this mode you can enter various commands.
+
+**NORMAL Mode (Default Mode)**
+- Used for navigating and executing commands.
+- Press `<ESC>` to return to this mode from other modes.
+
+**INSERT Mode (Typing Mode)**
+- Allows you to type like a normal editor.
+- Press `i` to enter INSERT mode.
+
+**VISUAL Mode (Selection Mode)**
+- Used to select texts.
+- Press `v` for selection.
+- Press `V` for select entire line.
+
+**Command-line** Mode (For Command)** 
+- Press `:` to enter this mode.
+- Used for command like saving and quitting.
+
 
 Now we'll move on to Navigation or how to move around in **NORMAL** mode.
 
 **Basic movements:** 
 
-- Use `h` move cursor right.
-- Use `j` move cursor down.
-- Use `k` move cursor up.
-- Use `l` move cursor left.
+- `h` → Move left
+- `l` → Move right
+- `j` → Move down
+- `k` → Move up
 
 **Vertical movement:**
 
-- Use `Ctrl + u` move cursor up 1/2 page.
-- Use `Ctrl + d` move cursor down 1/2 page.
-- Press `G` move cursor to bottom.
-- Press `gg` move cursor to top.
-- Use `{` to move up a paragraph and `}` to move down instead.
-- To search use press `/` and type in what to search then press Enter. You can also press `n` to jump to the next one and `N` to go back.
-- You can also use `?` to search backward mean your `n` will go back and vice versa.
-- To search a word you currently on press `*` and `#` to search backward. Movement also the same for searching.
+- `Ctrl + u` → Move **up** half a page
+- `Ctrl + d` → Move **down** half a page
+- `G` → Jump to the **bottom** of the file
+- `gg` → Jump to the **top** of the file
+- `{` → Move **up** by paragraph
+- `}` → Move **down** by paragraph
+
+**Searching**
+
+- `/word` → Search **forward** for "word"
+- `?word` → Search **backward** for "word"
+- `n` → Jump to the **next** match
+- `N` → Jump to the **previous** match
+- `*` → Search for the **word under the cursor** forward
+- `#` → Search for the **word under the cursor** backward
 
 **Horizontal movements:**
 
-- Use `w` to jump forward to start of a word.
-- Use `e` to jump forward to end of a word.
-- use `b` to jump backward to start of a word.
-- Use `fo` to jump to next occurrence of character `o`.
-- Use `Fo` to jump to previous occurrence of character `o`
-- Use `,` to repeat previous `f` and `;` to repeat the same but backward.
-- Press `$` will jump the end of a line and `_` will jump to begin of a line.
+- `w` → Jump **forward** to the start of the next word
+- `e` → Jump **forward** to the end of the current/next word
+- `b` → Jump **backward** to the start of the previous word
+- `f<char>` → Jump to the next occurrence of `<char>` in the current line
+- `F<char>` → Jump to the previous occurrence of `<char>` in the current line
+- `;` → Repeat the last `f` or `F` search
+- `,` → Repeat the last `f` or `F` search in reverse
+- `$` → Jump to the **end** of the line
+- `0` → Jump to the **beginning** of the line
 
-So after all that movement and how you navigating in Neovim, there must be some keybinds to delete or copy/paste right? Yes, they are exist and here are some example: 
+**Editing Commands**
+- `d` → Delete selected text
+- `dd` → Delete the current line
+- `y` → Yank (copy) selected text
+- `yy` → Yank the current line
+- `p` → Paste after the cursor
 
-- `d` to delete marked text or use `dd` to delete a whole line you are in.
-- `y` mean yank or copy a marked text and `yy` also yank a whole line.
-- `p` to paste after the cursor.
+
+**Saving and Quitting**
+- `:w` → Save the file
+- `:q` → Quit Neovim
+- `:wq` or `ZZ` → Save and quit
+- `:q!` → Quit without saving
 
 ### Saving and quitting
 
@@ -179,7 +216,11 @@ First you need to locate where your Neovim configuration is locate
 - For Windows go to `Appdata/Local/nvim`. Or go into nvim then use `:echo stdpath('config')` to locate nvim folder.
 - For MacOS, it's basically the same for Linux `~/config/nvim`.
 
+If it didn't exist then create a folder name `nvim` in your config directory and inside make a file name `init.lua`.
+
 You can setup a structured system but I'm lazy to do that so here we will do it in a single file.
+
+Paste this into your Neovim config file: 
 
 ```lua
 -- Bootstrap lazy.nvim
@@ -217,3 +258,116 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 ```
+
+# Mastering Neovim: A Beginner's Guide
+
+Neovim is a powerful, modernized version of Vim that offers extensive customization and efficiency. If you're new to Neovim, this guide will help you get started by covering its basic modes, navigation, editing commands, and even plugin management.
+
+---
+
+## Opening a File in Neovim
+To open a file with Neovim, use the following command:
+```sh
+nvim <file-name>
+```
+
+If the file doesn't exist, Neovim will create a new one upon saving.
+
+---
+
+## Understanding Neovim's Modes
+Neovim has four primary modes:
+
+### 1. **NORMAL Mode** (Default Mode)
+   - Used for navigation and executing commands.
+   - Press `<ESC>` to return to this mode from other modes.
+
+### 2. **INSERT Mode** (Typing Mode)
+   - Allows you to type text like a traditional editor.
+   - Press `i` to enter INSERT mode.
+
+### 3. **VISUAL Mode** (Selection Mode)
+   - Used for selecting text.
+   - Press `v` to start selection.
+   - Press `V` to select entire lines.
+
+### 4. **COMMAND-LINE Mode** (For Commands)
+   - Accessed by pressing `:`.
+   - Used for commands like saving and quitting.
+
+---
+
+## Navigation in NORMAL Mode
+### **Basic Movements**
+- `h` → Move cursor **left**
+- `l` → Move cursor **right**
+- `j` → Move cursor **down**
+- `k` → Move cursor **up**
+
+### **Vertical Movements**
+- `Ctrl + u` → Move **up** half a page
+- `Ctrl + d` → Move **down** half a page
+- `G` → Jump to the **bottom** of the file
+- `gg` → Jump to the **top** of the file
+- `{` → Move **up** by paragraph
+- `}` → Move **down** by paragraph
+
+### **Searching**
+- `/word` → Search **forward** for "word"
+- `?word` → Search **backward** for "word"
+- `n` → Jump to the **next** match
+- `N` → Jump to the **previous** match
+- `*` → Search for the **word under the cursor** forward
+- `#` → Search for the **word under the cursor** backward
+
+### **Horizontal Movements**
+- `w` → Jump **forward** to the start of the next word
+- `e` → Jump **forward** to the end of the current/next word
+- `b` → Jump **backward** to the start of the previous word
+- `f<char>` → Jump to the next occurrence of `<char>` in the current line
+- `F<char>` → Jump to the previous occurrence of `<char>` in the current line
+- `;` → Repeat the last `f` or `F` search
+- `,` → Repeat the last `f` or `F` search in reverse
+- `$` → Jump to the **end** of the line
+- `0` → Jump to the **beginning** of the line
+
+---
+
+## Editing Commands
+- `d` → Delete selected text
+- `dd` → Delete the current line
+- `y` → Yank (copy) selected text
+- `yy` → Yank the current line
+- `p` → Paste after the cursor
+
+---
+
+## Saving and Quitting
+- `:w` → Save the file
+- `:q` → Quit Neovim
+- `:wq` or `ZZ` → Save and quit
+- `:q!` → Quit without saving
+
+---
+
+## Exploring Neovim Plugins
+One of the best aspects of Neovim is its extensibility through plugins. A plugin manager makes it easier to install and manage plugins.
+
+### **Setting Up `lazy.nvim`**
+`lazy.nvim` is a modern Neovim plugin manager that provides a powerful UI for managing plugins while ensuring fast startup times. There are other options like `Packer` and `vim-plug`, but `lazy.nvim` is easier to set up.
+
+To install `lazy.nvim`, follow these steps:
+1. Open Neovim and run the following command to install `lazy.nvim`:
+   ```sh
+   git clone --filter=blob:none https://github.com/folke/lazy.nvim.git \
+       --branch=stable ~/.local/share/nvim/lazy.nvim
+   ```
+2. Then, configure it inside your Neovim config (`init.lua`).
+
+---
+
+## Conclusion
+Mastering Neovim takes time, but starting with basic navigation and editing commands will make your workflow more efficient. Pick a few key bindings that feel most useful and build from there. And remember, Neovim has built-in documentation—just type `:help` for more details.
+
+Happy coding!
+
