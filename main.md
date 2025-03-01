@@ -196,11 +196,7 @@ So if you want to save or quit then use only one of them in command mode.
 
 ## Plugins
 
-Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull.
-
-### Setup lazy.nvim
-
-Lazy.nvim is a modern neovim plugin manager. It's provide you with powerful UI to manage plugins and fast startup time when you installed a lots of plugin. Of course there are many more plugin manager like Packer, vim-plug but I'm too lazy to manually set those up and if you like me then this plugin manager is for you also.
+Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull. To make things easier, we will use a Neovim distro called kickstart.nvim. Unlike others distro where they did everything for you, this one only install the bare minimum for it like a package manager, LSP server,...
 
 #### Requirements
 
@@ -213,48 +209,32 @@ Lazy.nvim is a modern neovim plugin manager. It's provide you with powerful UI t
 First you need to locate where your Neovim configuration is locate
 
 - For Linux simply go to `~/.config/nvim`.
-- For Windows go to `Appdata/Local/nvim`. Or go into nvim then use `:echo stdpath('config')` to locate nvim folder.
+- For Windows go to `Appdata/Local/nvim`. Or `%localappdata%\nvim\`
 - For MacOS, it's basically the same for Linux `~/config/nvim`.
 
-If it didn't exist then create a folder name `nvim` in your config directory and inside make a file name `init.lua`.
+If it not exist, create one your own.
 
-You can setup a structured system but I'm lazy to do that so here we will do it in a single file.
+The recommended way to install Kickstart.nvim is to fork one your own from this [link](https://github.com/nvim-lua/kickstart.nvim) then install it by cloning the fork to your nvim folder by using this command below.
 
-Paste this into your Neovim config file: 
+**Linux/Mac**
 
-```lua
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- Setup lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- add your plugins here
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-})
+```SH
+git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim 
 ```
+
+**Windows**
+
+
+If you use `cmd.exe`
+```
+git clone https://github.com/nvim-lua/kickstart.nvim.git "%localappdata%\nvim"
+```
+
+If you use `powershell.exe`
+```
+git clone https://github.com/nvim-lua/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
+```
+
+After you installed it Lazy will install all the plugins you have. Use `:Lazy` to view all the plugins status. Hit `q` to close the window.
+
+Then you should read the Friendly Document in `init.lua` from you nvim config folder to understand further about Neovim plugins and also a way to explore and extend Neovim.
