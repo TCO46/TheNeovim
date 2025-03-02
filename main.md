@@ -16,7 +16,6 @@
     + [Basic Motion](#basic-motion)
     + [Saving and Quitting](#saving-and-quitting)
 - [Plugins](#plugins)
-    + [Setup lazy.nvim](#setup-lazyvim)
 
 ## Introduction
 
@@ -95,7 +94,7 @@ brew install neovim
 
 When you first open up Neovim and what first pop up is: 
 
-(image later)
+![First Start](./assets/first_start.png)
 
 You may think: __"How can this post claim Neovim outperforms my current editor, I literally can't even type!, how can I move around?, I can't do anything! **HOW DO I EXIT THIS?!?!?**"__.
 
@@ -196,13 +195,13 @@ So if you want to save or quit then use only one of them in command mode.
 
 ## Plugins
 
-Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull. To make things easier, we will use a Neovim distro called kickstart.nvim. Unlike others distro where they did everything for you, this one only install the bare minimum for it like a package manager, LSP server,...
+Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull. To make things easier, we will use a Neovim distro called kickstart.nvim. Unlike others distro where they did everything for you, this one only install the bare minimum for it like a package manager, LSP server,..., and some pre-configuration.
 
 #### Requirements
 
 - Neovim >= 0.8.0 (needs to be built with LuaJIT)
 - Git >= 2.19.0 (for partial clones support) 
-- a [Nerd Font](https://www.nerdfonts.com/) (optional)
+- a [Nerd Font](https://www.nerdfonts.com/) (optional but recommend for better experience)
 
 #### Installation
 
@@ -218,7 +217,7 @@ The recommended way to install Kickstart.nvim is to fork one your own from this 
 
 **Linux/Mac**
 
-```SH
+```sh
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim 
 ```
 
@@ -235,6 +234,47 @@ If you use `powershell.exe`
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
 ```
 
-After you installed it Lazy will install all the plugins you have. Use `:Lazy` to view all the plugins status. Hit `q` to close the window.
+After you installed it Lazy.nvim (a package manager) will install all the plugins you have. Use `:Lazy` to view all the plugins status. Hit `q` to close the window.
 
-Then you should read the Friendly Document in `init.lua` from you nvim config folder to understand further about Neovim plugins and also a way to explore and extend Neovim.
+| ![Lazy.nvim](./assets/lazynvim_example.png) |
+|:--:| 
+| *Lazy.nvim Example* |
+
+Then you should briefly read the Friendly Document in `init.lua` from you nvim config folder to further understand about Neovim configuration.
+
+If you did that then you should know where to put plugins so Lazy could install it. In case you don't, using search and find `require('lazy')` or just `lazy`. 
+
+kickstart.nvim already setup for LSP server or IntelliSense you normally see in VS code and other IDE.
+
+For example: To install new LSP like Python use command `:Mason` it'll have a popup that contain available LSP.
+
+![Mason](./assets/mason.png)
+
+Then press `Ctrl + f` to filter out languages and find Python.
+
+![Mason Find Python](./assets/mason_find_python.png)
+
+There're lots of LSP here but scroll down a bit and you'll see one called python-lsp-server.
+
+![Mason Install Python](./assets/mason_intstall_python.png)
+
+Then press `i` to install it. After that Python should appear here.
+
+![Mason Post Install](./assets/mason_post_install.png)
+
+Now whenever you open a python file the LSP should work out of the box like this:
+
+![Python file](./assets/python_file.png)
+
+
+Right now Neovim should work like a charm with autocomplete and suggestion but if you want to extend even more, you can visit this [github repo](https://github.com/rockerBOO/awesome-neovim) to find your favorite plugins
+
+Also here are my list of current plugins I currently use: 
+
+- ['numToStr/Comment.nvim'](https://github.com/numToStr/Comment.nvim)
+- ['stevearc/oil.nvim'](https://github.com/stevearc/oil.nvim)
+- ['windwp/nvim-autopairs'](https://github.com/windwp/nvim-autopairs)
+- ['tribela/transparent.nvim'](https://github.com/tribela/transparent.nvim)
+- ['folke/twilight.nvim'](https://github.com/folke/twilight.nvim)
+- ['folke/zen-mode.nvim'](https://github.com/folke/zen-mode.nvim)
+- ['ThePrimeagen/vim-be-good'](https://github.com/ThePrimeagen/vim-be-good)
