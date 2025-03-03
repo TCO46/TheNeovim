@@ -5,25 +5,25 @@
 </h1>
 
 ## table of content
-- [introduction](#introduction)
-    + [so what is Neovim?](#what-is-neovim?)
-    + [why use Neovim?](#why-use-neovim?)
-- [installing Neovim](#installing-neovim)
-    + [linux](#linux)
-    + [windows](#windows)
-    + [macOS](#macos)
-- [navigation](#navigation)
-    + [basic Motion](#basic-motion)
-    + [saving and Quitting](#saving-and-quitting)
-- [plugins](#plugins)
+- [Introduction](#introduction)
+    + [So what is Neovim?](#what-is-neovim?)
+    + [Why use Neovim?](#why-use-neovim?)
+- [Installing Neovim](#installing-neovim)
+    + [Linux](#linux)
+    + [Windows](#windows)
+    + [MacOS](#macos)
+- [Navigation](#navigation)
+    + [Basic Motion](#basic-motion)
+    + [Saving and Quitting](#saving-and-quitting)
+- [Plugins](#plugins)
 
 ## Introduction
 
-if you're reading this, you might be familiar with code editor like Visual Studio Code, Sublime or IDEs like Dev C++, Pycharm,... They all have one thing in common is that they are resource-heavy and bloated. Sure some of them are indeed light-weight and some are heavy because of built-in features in them, but what if I told you Neovim can do the same thing but better and faster?
+If you're reading this, you might be familiar with code editor like Visual Studio Code, Sublime or IDEs like Dev C++, Pycharm,... They all have one thing in common is that they are resource-heavy and bloated. Sure some of them are indeed light-weight and some are heavy because of built-in features in them, but what if I told you Neovim can do the same thing but better and faster?
 
 ### So what Is Neovim?
 
-neovim is a highly extensible keyboard-based editor on terminal-based where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
+Neovim is a highly extensible keyboard-based editor on terminal-based where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
 
 ### Why use Neovim?
 
