@@ -1,29 +1,29 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png" alt="Neovim">
 
-  <p>The Wonder Of Neovim</p>
+  <p>The Neovim</p>
 </h1>
 
-## Table of content
-- [Introduction](#introduction)
-    + [So what is Neovim?](#what-is-neovim?)
-    + [Why use Neovim?](#why-use-neovim?)
-- [Installing Neovim](#installing-neovim)
-    + [Linux](#linux)
-    + [Windows](#windows)
-    + [MacOS](#macos)
-- [Navigation](#navigation)
-    + [Basic Motion](#basic-motion)
-    + [Saving and Quitting](#saving-and-quitting)
-- [Plugins](#plugins)
+## table of content
+- [introduction](#introduction)
+    + [so what is Neovim?](#what-is-neovim?)
+    + [why use Neovim?](#why-use-neovim?)
+- [installing Neovim](#installing-neovim)
+    + [linux](#linux)
+    + [windows](#windows)
+    + [macOS](#macos)
+- [navigation](#navigation)
+    + [basic Motion](#basic-motion)
+    + [saving and Quitting](#saving-and-quitting)
+- [plugins](#plugins)
 
 ## Introduction
 
-If you're reading this, you might be familiar with code editor like Visual Studio Code, Sublime or IDEs like Dev C++, Pycharm,... They all have one thing in common is that they are resource-heavy and bloated. Sure some of them are indeed light-weight and some are heavy because of built-in features in them, but what if I told you Neovim can do the same thing but better and faster?
+if you're reading this, you might be familiar with code editor like Visual Studio Code, Sublime or IDEs like Dev C++, Pycharm,... They all have one thing in common is that they are resource-heavy and bloated. Sure some of them are indeed light-weight and some are heavy because of built-in features in them, but what if I told you Neovim can do the same thing but better and faster?
 
-### So What Is Neovim?
+### So what Is Neovim?
 
-Neovim is a highly extensible keyboard-based editor on terminal-based where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
+neovim is a highly extensible keyboard-based editor on terminal-based where your mouse is almost completely useless, and because of that, it can can improve your productivity since you won't need to touch the mouse. Neovim originally came from Vim or Vi and also a drop-in replacement of it, meaning Neovim are 99% identical to Vim but most of it's code base are refactored to be better, this also help the community to make faster and stronger plugins for Neovim.
 
 ### Why use Neovim?
 
@@ -244,7 +244,7 @@ Then you should briefly read the Friendly Document in `init.lua` from you nvim c
 
 If you did that then you should know where to put plugins so Lazy could install it. In case you don't, using search and find `require('lazy')` or just `lazy`. 
 
-kickstart.nvim already setup for LSP server or IntelliSense you normally see in VS code and other IDE.
+Kickstart.nvim already setup for LSP server or IntelliSense you normally see in VS code and other IDE.
 
 For example: To install new LSP like Python use command `:Mason` it'll have a popup that contain available LSP.
 
@@ -265,7 +265,6 @@ Then press `i` to install it. After that Python should appear here.
 Now whenever you open a python file the LSP should work out of the box like this:
 
 ![Python file](./assets/python_file.png)
-
 
 Right now Neovim should work like a charm with autocomplete and suggestion but if you want to extend even more, you can visit this [github repo](https://github.com/rockerBOO/awesome-neovim) to find your favorite plugins
 
