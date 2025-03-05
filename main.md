@@ -1,13 +1,14 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png" alt="Neovim">
+  <img src="./assets/Neovim_logo.png" alt="Neovim">
 
-  <p>The Neovim</p>
+  <p>Neovim The Editor</p>
 </h1>
 
 ## table of content
 - [Introduction](#introduction)
-    + [So what is Neovim?](#what-is-neovim?)
+    + [So what is Neovim?](#what-is-neovim)
     + [Why use Neovim?](#why-use-neovim?)
+    + [What is Neovim capable of?](#what-is-neovim-capable-of)
 - [Installing Neovim](#installing-neovim)
     + [Linux](#linux)
     + [Windows](#windows)
@@ -16,6 +17,7 @@
     + [Basic Motion](#basic-motion)
     + [Saving and Quitting](#saving-and-quitting)
 - [Plugins](#plugins)
+- [Conclusion](#conclusion)
 
 ## Introduction
 
@@ -33,9 +35,15 @@ Here are **3 reasons** why I pick Neovim for my daily coding editor:
 2. The Neovim customization is beyond your own limits (or someone else plugins/config).
 3. Neovim is light-weight which can be run in everywhere (especially server).
 
+### What is Neovim capable of?
+
+To be honest Neovim can be use to write anything you want not just coding. You can write diary, note, plan, etc and with plugins, you can improve the experience of writing which we will cover in the last section.
+
+Most of the time I use Neovim for coding because how fast and strong it is and sometime I use Neovim for writing like the one you reading right now. But you can see Neovim as a empty Notebook, a Journal or even just a paper.
+
 ## Installing Neovim
 
-So you're here because you don't know how to install it or you did it but it's somehow broken or not working properly.
+Enough with the introduction, now we will install Neovim into our system.
 
 ### Linux
 
@@ -101,6 +109,8 @@ You may think: __"How can this post claim Neovim outperforms my current editor, 
 That's because you haven't set everything up so it's can usable. Neovim becomes powerful when you learn how to use it and invest time customizing or install plugins to it.
 ### Basic Motion
 
+Unlike any editors, you have to use your mouse or arrow keys to move the cursor. Here in Neovim, you can move around using the keyboard thus improve your speed. So in this section, we will cover the basic motion of Neovim.
+
 First to open a file with Neovim use the following command: 
 
 ```
@@ -124,7 +134,7 @@ There are 4 main modes in Neovim:
 - Press `v` for selection.
 - Press `V` for select entire line.
 
-**Command-line** Mode (For Command)** 
+**Command-line Mode (For Command)**
 - Press `:` to enter this mode.
 - Used for command like saving and quitting.
 
@@ -175,12 +185,35 @@ Now we'll move on to Navigation or how to move around in **NORMAL** mode.
 - `yy` → Yank the current line
 - `p` → Paste after the cursor
 
-
 **Saving and Quitting**
 - `:w` → Save the file
 - `:q` → Quit Neovim
 - `:wq` or `ZZ` → Save and quit
 - `:q!` → Quit without saving
+
+#### Example
+
+```ts
+interface User {
+  name: string;
+  id: number;
+}
+ 
+class UserAccount {
+  name: string;
+  id: number;
+ 
+  constructor(name: string, id: number) {
+    this.name = name;
+    this.id = id;
+  }
+}
+ 
+const user: User = new UserAccount("Murphy", 1);
+```
+I have this example Typescipt code and I want to change `"Murphy"` into something else. The most simple way to this is use `G` to go the last line then `fM` to move into the string and `ve` to select the string, next press `d` to delete then `i` to change whatever you want.
+
+![demo GIF](./assets/demo.gif)
 
 ### Saving and quitting
 
@@ -242,7 +275,6 @@ After you installed it Lazy.nvim (a package manager) will install all the plugin
 
 Then you should briefly read the Friendly Document in `init.lua` from you nvim config folder to further understand about Neovim configuration.
 
-If you did that then you should know where to put plugins so Lazy could install it. In case you don't, using search and find `require('lazy')` or just `lazy`. 
 
 Kickstart.nvim already setup for LSP server or IntelliSense you normally see in VS code and other IDE.
 
@@ -277,3 +309,9 @@ Also here are my list of current plugins I currently use:
 - ['folke/twilight.nvim'](https://github.com/folke/twilight.nvim)
 - ['folke/zen-mode.nvim'](https://github.com/folke/zen-mode.nvim)
 - ['ThePrimeagen/vim-be-good'](https://github.com/ThePrimeagen/vim-be-good)
+
+If you read the Friendly Document then you should know where to put plugins so Lazy could install it. In case you don't, use search and find `require('lazy')` or just `lazy`. 
+
+### Conclusion
+
+Neovim is indeed a strong tool for your writing but only you actually thinking about using it right. If you don't feel like it you can still use your favorite code editors or IDEs but it is a thing that you should at least try once especially you're in IT field because I, myself learnt a lots of how things work under the hood when trying it.
