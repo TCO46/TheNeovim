@@ -213,7 +213,7 @@ const user: User = new UserAccount("Murphy", 1);
 ```
 I have this example Typescipt code and I want to change `"Murphy"` into something else. The most simple way to this is use `G` to go the last line then `fM` to move into the string and `ve` to select the string, next press `d` to delete then `i` to change whatever you want.
 
-![demo GIF](./assets/demo.gif)
+![Demo GIF](./assets/demo.gif)
 
 ### Saving and quitting
 
