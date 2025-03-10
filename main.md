@@ -16,6 +16,7 @@
 - [Navigation](#navigation)
     + [Basic Motion](#basic-motion)
     + [Saving and Quitting](#saving-and-quitting)
+    + [Macros](#macros)
 - [Plugins](#plugins)
 - [Conclusion](#conclusion)
 
@@ -211,7 +212,7 @@ class UserAccount {
  
 const user: User = new UserAccount("Murphy", 1);
 ```
-I have this example Typescipt code and I want to change `"Murphy"` into something else. The most simple way to this is use `G` to go the last line then `fM` to move into the string and `ve` to select the string, next press `d` to delete then `i` to change whatever you want.
+I have this example Typescipt code and I want to change `"Murphy"` into something else. The most simple way to this is use `G` to go the last line then `fM` to move into the string and press `de` to delete the current word, next edit it to something ese.
 
 ![Demo GIF](./assets/demo.gif)
 
@@ -223,6 +224,16 @@ To quit a file simply enter command mode then type `wq`
 - `q` stands for quitting a file.
 
 So if you want to save or quit then use only one of them in command mode.
+
+**Macros**
+
+Macros or Record and Playbacks is a command can help you repeats the complex changes by recording it. This command is really good for repetitive task because having macros for it can save you time. There are 3 step to make a Macro
+
+1. press "q{register}" to start recording (The register name is range from a to z).
+2. type your commands
+3. Press q to stop the record.
+
+Now you can execute the Macros by typing the command `@{register}`.
 
 ##### And this is almost every basic Neovim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
 
