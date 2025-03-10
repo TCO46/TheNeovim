@@ -4,7 +4,7 @@
   <p>Neovim The Editor</p>
 </h1>
 
-## table of content
+## TABLE OF CONTENT
 - [Introduction](#introduction)
     + [So what is Neovim?](#what-is-neovim)
     + [Why use Neovim?](#why-use-neovim?)
