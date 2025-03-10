@@ -47,7 +47,7 @@ Enough with the introduction, now we will install Neovim into our system.
 
 ### Linux
 
-Neovim exist in almost Linux distributions repositories due to its popularity so most likely you can install it using your distrubution's package manager.
+Neovim exist in almost Linux distributions repositories due to its popularity so most likely you can install it using your distribution's package manager.
 
 1. Arch (btw)
 
@@ -228,7 +228,7 @@ So if you want to save or quit then use only one of them in command mode.
 
 ## Plugins
 
-Now this one might be the most fun part because now you will try to install plugins into it to make it more powerfull. To make things easier, we will use a Neovim distro called kickstart.nvim. Unlike others distro where they did everything for you, this one only install the bare minimum for it like a package manager, LSP server,..., and some pre-configuration.
+Now this one might be the most fun part because now you will try to install plugins into it to make it more powerful. To make things easier, we will use a Neovim distro called kickstart.nvim. Unlike others distro where they did everything for you, this one only install the bare minimum for it like a package manager, LSP server,..., and some pre-configuration.
 
 #### Requirements
 
