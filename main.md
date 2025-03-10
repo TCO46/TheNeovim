@@ -229,11 +229,38 @@ So if you want to save or quit then use only one of them in command mode.
 
 Macros or Record and Playbacks is a command can help you repeats the complex changes by recording it. This command is really good for repetitive task because having macros for it can save you time. There are 3 step to make a Macro
 
-1. press "q{register}" to start recording (The register name is range from a to z).
+1. press `q{register}` to start recording (The register name is range from a to z).
 2. type your commands
-3. Press q to stop the record.
+3. Press `q` to stop the record.
 
 Now you can execute the Macros by typing the command `@{register}`.
+
+**EXAMPLE**
+
+We have these Library in Typescript and I want to change it to ES6 import 
+
+```ts
+const express = require("express")
+const path = require("path")
+const fs = require("fs")
+```
+
+We can do this with these following commands:
+
+`qt` to start recording.\
+`_` Move to beginning of the line.\
+`de` remove the `const`\
+`iimport<ESC>` Insert the string `import` at beginning of the line.\
+`f=` Move to `=` sign.\
+`df(` Remove from `=` to `(`.\
+`ifrom <ESC>` Insert string `from`.\
+`$` Move to the end of the line.\
+`a <DEL><ESC>` Remove the last `)`.\
+`j` Move to the next line.\
+`q` Stop recording the macro.
+
+So now we got a macro that can change to import ES6, you can repeat the change by typing the command `@t` 3 times or `3@t` to make it execute 3 times.
+
 
 ##### And this is almost every basic Neovim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
 
