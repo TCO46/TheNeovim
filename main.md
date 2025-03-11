@@ -247,7 +247,7 @@ Here we got some useful sentences you might want to see.
 
 With these and using the previous example we can speed up the process of changing it to something else.
 
-![demo3](./assets/demo3.gif)
+![demo3](./assets/demo2.gif)
 
 ### Saving and quitting
 
@@ -294,7 +294,7 @@ We can do this with these following commands:
 
 So now we got a macro that can change to import ES6, you can repeat the change by typing the command `@t` 3 times or `3@t` to make it execute 3 times.
 
-![demo2](./assets/demo2.gif)
+![demo2](./assets/demo3.gif)
 
 
 ##### And this is almost every Vim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
