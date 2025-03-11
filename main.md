@@ -14,7 +14,7 @@
     + [Windows](#windows)
     + [MacOS](#macos)
 - [Navigation](#navigation)
-    + [Basic Motion](#basic-motion)
+    + [Vim Motion](#vim-motion)
     + [Saving and Quitting](#saving-and-quitting)
     + [Macros](#macros)
 - [Plugins](#plugins)
@@ -40,7 +40,7 @@ Here are **3 reasons** why I pick Neovim for my daily coding editor:
 
 To be honest Neovim can be use to write anything you want not just coding. You can write diary, note, plan, etc and with plugins, you can improve the experience of writing which we will cover in the last section.
 
-Most of the time I use Neovim for coding because how fast and strong it is and sometime I use Neovim for writing like the one you reading right now. But you can see Neovim as a empty Notebook, a Journal or even just a paper.
+Most of the time I use Neovim for coding because how fast and strong it is and sometime I use Neovim for writing like the one you are reading right now. But you can see Neovim as an empty notebook, a journal or even just a paper.
 
 ## Installing Neovim
 
@@ -139,6 +139,13 @@ There are 4 main modes in Neovim:
 - Press `:` to enter this mode.
 - Used for command like saving and quitting.
 
+**Vim Motion Syntax**
+
+Neovim allows you to combine motions and operators to form a "sentences", it's like doing a combo in fighting games.
+
+```
+[count]<operator>[count]<motion>
+```
 
 Now we'll move on to Navigation or how to move around in **NORMAL** mode.
 
@@ -247,7 +254,7 @@ const fs = require("fs")
 
 We can do this with these following commands:
 
-`qt` to start recording.\
+`qt` To start recording.\
 `_` Move to beginning of the line.\
 `de` remove the `const`\
 `iimport<ESC>` Insert the string `import` at beginning of the line.\
@@ -261,6 +268,7 @@ We can do this with these following commands:
 
 So now we got a macro that can change to import ES6, you can repeat the change by typing the command `@t` 3 times or `3@t` to make it execute 3 times.
 
+[demo2](./assets/demo2.gif)
 
 ##### And this is almost every basic Neovim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
 
