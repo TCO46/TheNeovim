@@ -223,6 +223,32 @@ I have this example Typescipt code and I want to change `"Murphy"` into somethin
 
 ![Demo GIF](./assets/demo.gif)
 
+Here we got some useful sentences you might want to see.
+
+**Change Inside/Around**
+
+- `ci(` → Change inside the `(` found from the current cursor.
+- `ca(` → Change around the `(` found from the current cursor.
+
+**Yank (copy) Inside/Around**
+
+- `yi(` → Copy inside the `(` found from the current cursor.
+- `ya(` → Copy around the `(` found from the current cursor.
+
+**Delete Inside/Around**
+
+- `di(` → Delete inside the `(` found from the current cursor.
+- `da(` → Delete around the `(` found from the current cursor.
+
+**Copy/Delete/Change till Character**
+- `ct:` → Change the text till the next character `:`.
+- `yt:` → Copy the text till the next character `:`.
+- `dT:` → Delete the text till the previous character `:`.
+
+With these and using the previous example we can speed up the process of changing it to something else.
+
+![demo3](./assets/demo3.gif)
+
 ### Saving and quitting
 
 To quit a file simply enter command mode then type `wq`
@@ -268,9 +294,10 @@ We can do this with these following commands:
 
 So now we got a macro that can change to import ES6, you can repeat the change by typing the command `@t` 3 times or `3@t` to make it execute 3 times.
 
-[demo2](./assets/demo2.gif)
+![demo2](./assets/demo2.gif)
 
-##### And this is almost every basic Neovim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
+
+##### And this is almost every Vim motion, it might hard at first that you cannot remember all of the keybinds but you can always learn to use it effectively but for now pick some that you think you will use the most and goes on till you master it. Also you can use `:help` to help you understand more about some about vim.
 
 ## Plugins
 
