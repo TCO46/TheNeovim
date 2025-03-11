@@ -352,7 +352,7 @@ If you read the Friendly Document then you should know where to put plugins so L
 
 ### Conclusion
 
-Neovim is indeed a strong tool for your writing but only you actually thinking about using it right. If you don't feel like it you can still use your favorite code editors or IDEs but it is a thing that you should at least try once especially you're in IT field because I, myself learnt a lots of how things work under the hood when trying it.
+Neovim is indeed a strong tool for your writing but only you actually thinking about using it right. If you don't feel like it you can still use your favorite code editors or IDEs but it is a thing that you should try at least once especially you're in IT field because I, myself learnt a lots of how things work under the hood when trying it.
 
 ### Source
 
